@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+@theme inline {
+  --font-display: "Playfair Display", serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --color-stone-50: #faf9f7;
+  --color-stone-100: #f2efe9;
+  --color-stone-200: #e4ddd1;
+  --color-stone-300: #d0c4b0;
+  --color-stone-400: #b8a48a;
+  --color-stone-500: #a08a6e;
+  --color-stone-600: #8a7058;
+  --color-stone-700: #70593f;
+  --color-stone-800: #5a4632;
+  --color-stone-900: #3d2e1e;
+  --color-peak-50: #f0f4ef;
+  --color-peak-100: #dde8db;
+  --color-peak-200: #b8d1b4;
+  --color-peak-300: #8db488;
+  --color-peak-400: #5f9158;
+  --color-peak-500: #3d7236;
+  --color-peak-600: #2d5a27;
+  --color-peak-700: #1f4019;
+  --color-peak-800: #14290f;
+  --color-peak-900: #0b1708;
+  --color-ember: #c0692a;
+  --color-cream: #faf6ef;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: "Playfair Display", serif;
+}
+
+@theme {
+  --animate-fade-up: fadeUp 0.7s ease both;
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Step connector */
+.step-line {
+  position: relative;
+}
+.step-line:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 100%;
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(to bottom, #8a7058, transparent);
+}
+/* @utility reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+} */
+
+@utility reveal-visible {
+  opacity: 1;
+  transform: none;
+}
