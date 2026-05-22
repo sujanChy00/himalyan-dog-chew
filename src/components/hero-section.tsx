@@ -5,10 +5,10 @@ import { CarouselImages } from "./carousel-images";
 const DELAY = 5000;
 
 const images = [
-  "/banner_1.png",
-  "/banner_2.png",
-  "/banner_3.png",
-  "/banner_4.png",
+  "/banner_1.webp",
+  "/banner_2.webp",
+  "/banner_3.webp",
+  "/banner_4.webp",
 ];
 
 export const HeroSection = () => {
