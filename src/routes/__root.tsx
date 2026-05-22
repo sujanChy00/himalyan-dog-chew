@@ -1,9 +1,9 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 
-import { Footer } from '#/components/footer'
-import { Header } from '#/components/header'
-import { LanguageProvider } from '#/language'
-import appCss from '../styles.css?url'
+import { Footer } from "#/components/footer";
+import { Header } from "#/components/header";
+import { LanguageProvider } from "#/context/language";
+import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -65,7 +65,7 @@ export const Route = createRootRoute({
     ],
   }),
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -73,7 +73,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-     <body className="bg-cream text-stone-900 antialiased overflow-x-hidden">
+      <body className="bg-cream text-stone-900 antialiased overflow-x-hidden">
         <LanguageProvider>
           <Header />
           {children}
@@ -82,5 +82,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

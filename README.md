@@ -1,218 +1,144 @@
-Welcome to your new TanStack Start app! 
+# 🐕 Himalayan Dog Cheese | ヒマラヤチーズ
 
-# Getting Started
+A premium, highly-polished, and fully responsive single-page **bilingual (English & Japanese) landing page** for **Himalayan Dog Cheese / ヒマラヤチーズ**. This landing page is built with **TanStack Start**, **React**, and **TypeScript**, utilizing **Tailwind CSS v4** for styling. It features a rich, custom design system, interactive components, smooth micro-animations, and full accessibility features.
 
-To run this application:
+---
+
+## ✨ Features & Visual Aesthetics
+
+*   **🌐 Seamless Bilingual Support (EN / JP):** A language toggle button in the header dynamically switches the page content between English and Japanese. The user's language choice is persisted locally using `localStorage`.
+*   **🏔️ Immersive Hero Carousel:**
+    *   Full-bleed, smooth scale-transitioning slides.
+    *   Interactive controls (Previous/Next, Dot indicators).
+    *   Custom circular progress bar timing system with a `5-second` delay.
+    *   Automatic pause-on-hover logic.
+    *   Preloader logic with robust fallback Unsplash nature/dog images if background assets fail to load.
+*   **🎨 Premium Design System:**
+    *   **Tailwind HSL Color System:** Incorporates warm, natural colors including a `stone` neutral palette (stone-50 to stone-900), organic forest `peak` greens (peak-50 to peak-900), deep accent `ember` orange, and warm `cream` base backgrounds.
+    *   **Typography:** Elegant font pairing using the **Playfair Display** serif font for display headers and **DM Sans** sans-serif font for body copy.
+    *   **Mountain Grain Overlay:** A custom inline SVG noise texture overlay applied across sections to provide a premium, organic tactile feel.
+*   **✨ Modern Micro-interactions:**
+    *   Card hover-lift actions (`lift`) that trigger elegant transitions, subtle scaling, and soft shadows.
+    *   Bouncing scroll-down indications and custom SVG paw-divider accents.
+*   **🚀 Scroll-Reveal Animations:** Dynamic entrance transitions utilizing the modern **Intersection Observer API** for custom fade-up effects (`reveal` and `visible`) as elements scroll into view.
+*   **♿ Accessibility (a11y) & SEO:**
+    *   Semantic HTML5 tags throughout (`header`, `main`, `section`, `article`, `footer`).
+    *   Included a **Skip to Content** keyboard link for screen readers.
+    *   Descriptive metadata, responsive viewports, and clean responsive flex/grid wrappers.
+
+---
+
+## 🛠️ Tech Stack
+
+*   **Framework:** TanStack Start, React
+*   **Language:** TypeScript
+*   **Styling & Theming:** Tailwind CSS v4
+*   **Icons & Assets:** Pure SVGs, custom base64 vectors, and high-quality fallback Unsplash assets
+*   **Logic & Interactions:** Modern JavaScript (ES6+)
+*   **Animations:** Web Animations API, custom CSS `@keyframes`, and `IntersectionObserver` scroll reveals
+
+---
+
+## 📂 Project Structure
+
+The project follows a standard TanStack Start application structure:
+
+```bash
+himalyan-dog-chew/
+├── public/
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── routes/
+│   ├── styles/
+│   └── main.tsx
+├── .env
+├── vite.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md      # Project documentation and customization guide
+```
+
+---
+
+## 🚀 Getting Started
+
+To get this project up and running locally, follow these steps:
+
+### 1. Installation
 
 ```bash
 bun install
+```
+
+### 2. Development Server
+
+```bash
 bun --bun run dev
 ```
 
-# Building For Production
+This will start the development server, and you can access the application at `http://localhost:5173` (or whatever port is shown in your terminal).
 
-To build this application for production:
+### 3. Build for Production
 
 ```bash
 bun --bun run build
 ```
 
-## Testing
+This will compile the application for production, and the output will be in the `dist/` directory.
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
-```bash
-bun --bun run test
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Uninstall the packages: `bun install @tailwindcss/vite tailwindcss -D`
-
-## Linting & Formatting
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
-
-```bash
-bun --bun run lint
-bun --bun run format
-bun --bun run check
-```
-
-
-## Deploy with Nitro
-
-This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
+### 4. Run Production Build (using Nitro)
 
 ```bash
 npm run build
 node dist/server/index.mjs
 ```
 
-The build output is a self-contained Node server. To deploy, push the `dist/` directory to your host (Render, Fly.io, your own VPS, etc.) and run the server command above.
+---
 
-For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tuning, see https://v3.nitro.build/deploy.
+## 🧭 Page Sections Breakdown
 
+The page is structured into several responsive sections, likely implemented as React components within the `src/components` and `src/routes` directories:
 
+1.  **Header:** Sticky header with dog emblem, navigation links, and the persisted **EN / JP** switcher.
+2.  **Hero Carousel:** The visual centerpiece, combining background imagery, premium tint layers, auto-progression, slide transitions, and overlay navigation.
+3.  **About Section:** Introduces the brand story, its heritage, and its dedication to organic Himalayan ingredients.
+4.  **Benefits Section:** A premium dark grid section highlighting raw values, lactose-free qualities, dental benefits, and long-lasting chewing utility.
+5.  **Products Section:** Interactive product showcases with high-fidelity badges, size parameters, and descriptive titles.
+6.  **How to Use:** A simplified, step-by-step visual roadmap walking owners through the feeding, chewing, and microwaving process.
+7.  **FAQ Accordions:** An elegant interactive question-and-answer library covering product shelf life, safety guidelines, and puppy suitability.
+8.  **Contact & Retailers:** A high-impact dark card grid prompting shop owners to connect, customize copywriting, or map local retailer locator systems.
 
-## Routing
+---
 
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
+## ✍️ Customization Guide
 
-### Adding A Route
+### 1. Modifying Colors & Styling
+Colors are configured directly within `src/styles.css` using Tailwind CSS v4's `@theme` directive:
 
-To add a new route to your application just add a new file in the `./src/routes` directory.
-
-TanStack will automatically generate the content of the route file for you.
-
-Now that you have two routes you can use a `Link` component to navigate between them.
-
-### Adding Links
-
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
-
-```tsx
-import { Link } from "@tanstack/react-router";
-```
-
-Then anywhere in your JSX you can use it like so:
-
-```tsx
-<Link to="/about">About</Link>
-```
-
-This will create a link that will navigate to the `/about` route.
-
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
-    ],
-  }),
-  shellComponent: ({ children }) => (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  ),
-})
-```
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-## Server Functions
-
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
-
-```tsx
-import { createServerFn } from '@tanstack/react-start'
-
-const getServerTime = createServerFn({
-  method: 'GET',
-}).handler(async () => {
-  return new Date().toISOString()
-})
-
-// Use in a component
-function MyComponent() {
-  const [time, setTime] = useState('')
-  
-  useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
+```css
+/* src/styles.css */
+@theme inline {
+  --color-stone-50: #faf9f7;
+  /* ... other stone colors */
+  --color-peak-50: #f0f4ef;
+  /* ... other peak colors */
+  --color-ember: #c0692a;
+  --color-cream: #faf6ef;
 }
 ```
 
-## API Routes
+### 2. Updating Bilingual Copy
+Bilingual copy is handled within React components. You would typically use a localization library or a custom context to manage and switch between English and Japanese text. Look for text content within your components and adapt accordingly.
 
-You can create API routes by using the `server` property in your route definitions:
+### 3. Replacing Carousel Images
+Carousel images would typically be managed within a React component that handles the carousel logic. Image paths or data would be defined in a component's state or props. Update the image sources within the relevant carousel component files (e.g., `src/components/Carousel.tsx`).
 
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
+---
 
-export const Route = createFileRoute('/api/hello')({
-  server: {
-    handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
-    },
-  },
-})
-```
+## ⚡ Performance & Optimization
 
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/people')({
-  loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
-  },
-  component: PeopleComponent,
-})
-
-function PeopleComponent() {
-  const data = Route.useLoaderData()
-  return (
-    <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
-    </ul>
-  )
-}
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
-
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+*   **Optimized Build:** TanStack Start and Vite provide an optimized build process for fast loading and rendering.
+*   **Lazy Loading:** React's `lazy` and `Suspense` can be used for lazy loading components, further improving initial load times.
+*   **Responsive Graphics:** Heavy vector artwork and texturizers are loaded via compact, optimized SVGs to maintain crisp clarity on high-DPI displays.
+*   **Efficient State Management:** TanStack Start and React's inherent efficiencies ensure smooth updates and interactions.
