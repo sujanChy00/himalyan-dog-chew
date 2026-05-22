@@ -17,8 +17,8 @@ export const Header = () => {
           aria-label="Himalayan Dog Cheese home"
           className="flex items-center gap-3 group"
         >
-          <div className="w-10 h-10 rounded-full bg-linear-to-br from-peak-500 to-peak-700 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:shadow-lg transition-shadow">
-            🐕
+          <div className="rounded-full size-10 overflow-hidden flex items-center justify-center  text-lg shadow-md">
+            <img src="/favicon.ico" alt="logo" />
           </div>
           <div className="leading-tight">
             <h3 className="font-display font-bold text-stone-900 text-sm">

@@ -5,8 +5,8 @@ export const Footer = () => {
     <footer className="py-10 border-t border-stone-200">
       <Container className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-linear-to-br from-peak-500 to-peak-700 flex items-center justify-center text-white text-sm">
-            🐕
+          <div className="size-8 rounded-full flex items-center justify-center">
+            <img src="/favicon.ico" alt="logo" />
           </div>
           <div>
             <div className="font-display font-bold text-stone-900 text-sm">
