@@ -11,7 +11,8 @@ export const Faq = () => {
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl">
             <span>
-              Short answers help keep a landing page clean and easy to scan.
+              Everything you need to know before your dog takes their first
+              chew.
             </span>
           </p>
         </div>
@@ -19,11 +20,14 @@ export const Faq = () => {
           <article className="reveal lift bg-white rounded-3xl border border-stone-100 p-7 shadow-sm">
             <div className="text-2xl mb-3">🐕</div>
             <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>Is it for all dogs?</span>
+              <span>Is it suitable for all dogs?</span>
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed">
               <span>
-                Add size guidance and a note that chewing style differs by dog.
+                Yes — we offer multiple sizes to suit small, medium, and large
+                breeds. We recommend choosing a size larger than you think you
+                need, especially for aggressive chewers. Not recommended for
+                puppies under 6 months or dogs with dental sensitivities.
               </span>
             </p>
           </article>
@@ -33,12 +37,14 @@ export const Faq = () => {
           >
             <div className="text-2xl mb-3">⏱️</div>
             <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>How long does it last?</span>
+              <span>How long does one chew last?</span>
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed">
               <span>
-                Designed to be long-lasting, while exact time depends on the
-                dog.
+                Our chews are designed to last significantly longer than soft
+                treats — typically hours to days depending on your dog's size
+                and chewing intensity. The harder the chewer, the more
+                satisfying and extended the session.
               </span>
             </p>
           </article>
@@ -52,7 +58,10 @@ export const Faq = () => {
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed">
               <span>
-                Use a store locator, online shop link, or retail contact form.
+                Our chews are available through select retailers in Japan and
+                via international wholesale and distribution partners worldwide.
+                Get in touch through our contact form for purchasing options
+                near you.
               </span>
             </p>
           </article>
@@ -62,10 +71,16 @@ export const Faq = () => {
           >
             <div className="text-2xl mb-3">🛡️</div>
             <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>What about safety?</span>
+              <span>Are they safe?</span>
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed">
-              <span>Supervise chewing and stop if the dog bites too hard.</span>
+              <span>
+                Himalayan cheese chews are naturally hard and low-risk when used
+                correctly. Always supervise your dog, remove the chew when it
+                becomes small enough to swallow whole, and consult your vet if
+                your dog has any dietary concerns. Made with no artificial
+                additives — just natural ingredients.
+              </span>
             </p>
           </article>
         </div>

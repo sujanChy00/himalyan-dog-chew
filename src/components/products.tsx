@@ -4,21 +4,21 @@ const data = [
   {
     icon: "🦴",
     title: "Cheese Stick",
-    desc: "The hero product for daily chewing time.",
+    desc: "Our original hard chew — dense, long-lasting, and made from just four natural ingredients. Perfect for daily enrichment and keeping dogs happily occupied.",
     color: "from-amber-50 to-amber-100",
     animationDelay: "0s",
   },
   {
     icon: "🧀",
     title: "Cheese Chips",
-    desc: "A smaller, easy-to-serve option.",
+    desc: "Bite-sized pieces of Himalayan cheese — great as a training reward or a lighter snack between longer chew sessions.",
     color: "from-yellow-50 to-yellow-100",
     animationDelay: ".08s",
   },
   {
     icon: "🥐",
     title: "Cheese Rusk",
-    desc: "Light, crunchy, and ready to enjoy.",
+    desc: "A crunchy, lighter-textured chew ideal for smaller breeds or dogs who prefer a softer bite. Same natural goodness, gentler on the jaw.",
     color: "from-orange-50 to-orange-100",
     animationDelay: ".16s",
   },
@@ -35,13 +35,15 @@ export const Products = () => {
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl">
             <span>
-              A simple four-card lineup works well for a one-page landing page.
+              From long-lasting sticks to light daily snacks — a chew for every
+              dog, every moment.
             </span>
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {data.map((d) => (
             <article
+              key={d.title}
               style={{ transitionDelay: d.animationDelay }}
               className="reveal lift bg-white rounded-3xl border border-stone-100 overflow-hidden shadow-sm"
             >
@@ -58,7 +60,6 @@ export const Products = () => {
               </div>
             </article>
           ))}
-
           <article
             className="reveal lift bg-linear-to-br from-peak-600 to-peak-800 rounded-3xl border border-peak-700 overflow-hidden shadow-sm"
             style={{ transitionDelay: ".24s" }}
@@ -68,10 +69,14 @@ export const Products = () => {
             </div>
             <div className="p-5">
               <h3 className="font-display font-bold text-lg text-white mb-2">
-                <span>Seasonal / Gift Set</span>
+                <span>Seasonal Gift Set</span>
               </h3>
               <p className="text-peak-100 text-sm leading-relaxed">
-                <span>Use this space for limited editions or gift packs.</span>
+                <span>
+                  Curated gift sets for special occasions — a thoughtful present
+                  for the dogs and dog lovers in your life. Ask us about
+                  seasonal and limited-edition bundles.
+                </span>
               </p>
             </div>
           </article>
