@@ -29,7 +29,16 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 key={link.to}
                 className="border-b border-b-creamy last:border-none"
               >
-                <Link to={link.to} className="block py-2">
+                <Link
+                  onClick={() => {
+                    onClose();
+                  }}
+                  activeProps={{
+                    className: "!font-bold text-creamy-text!",
+                  }}
+                  to={link.to}
+                  className="block py-2 text-gray-600"
+                >
                   {link.label}
                 </Link>
               </li>
