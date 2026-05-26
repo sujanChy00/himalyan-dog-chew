@@ -49,9 +49,11 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           🛒 Shop Now
         </button>
       </div>
-      <button
-        className={`fixed top-0 left-0 z-40 w-full h-full bg-white/5 backdrop-blur-2xl transition-opacity duration-300 ${
-          isOpen ? "opacity-100 z-40" : "opacity-0 -z-10"
+      <div
+        className={`fixed inset-0 z-40 bg-white/5 backdrop-blur-2xl transition-opacity duration-300 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
       />
