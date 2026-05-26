@@ -61,9 +61,12 @@ export const Header = () => {
               ))}
             </ul>
 
-            <button className="rounded-lg bg-dark px-6 py-2 sm:block hidden text-secondary">
+            <Link
+              to="/"
+              className="rounded-lg bg-dark px-6 py-2 sm:block hidden text-secondary"
+            >
               🛒 Shop Now
-            </button>
+            </Link>
             <button
               onClick={() => {
                 setIsMenuOpen((prev) => !prev);
