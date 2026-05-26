@@ -1,6 +1,6 @@
 export const FeedingGuide = () => {
   return (
-    <div className="pl-10">
+    <div className="md:pl-10">
       <h2 className="text-2xl font-bold mb-4">Feding Guide</h2>
 
       <ul className="text-sm space-y-3 mb-5">

@@ -1,6 +1,6 @@
 export const Ingredients = () => {
   return (
-    <div className="px-10 border-x border-x-creamy">
+    <div className="md:px-10 md:border-x md:border-x-creamy">
       <h2 className="text-2xl font-bold mb-4">Ingredients</h2>
       <img src="/ingredients.webp" alt="ingredients" />
       <p className="text-gray-800 text-sm leading-relaxed font-medium">

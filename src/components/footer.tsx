@@ -79,7 +79,7 @@ export const Footer = () => {
         </section>
       </Container>
       <div className="bg-creamy-dark">
-        <Container className="text-brand flex items-center gap-3 justify-between py-4">
+        <Container className="text-brand flex flex-wrap items-center gap-3 justify-between py-4">
           <div className="flex gap-4">
             <a href="#" className="hover:underline hover:text-creamy">
               Privacy Policy
