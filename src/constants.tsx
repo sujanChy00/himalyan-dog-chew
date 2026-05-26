@@ -15,6 +15,10 @@ export const footerLinks: { to: LinkProps["to"]; label: string }[] = [
     label: "PRODUCTS",
   },
   {
+    label: "Our Story",
+    to: "/our-story",
+  },
+  {
     to: "/feeding-guides",
     label: "FEEDING GUIDE",
   },
@@ -40,6 +44,10 @@ export const headerLinks: { to: LinkProps["to"]; label: string }[] = [
   {
     to: "/products",
     label: "Products",
+  },
+  {
+    to: "/our-story",
+    label: "Our Story",
   },
   {
     to: "/feeding-guides",

@@ -29,9 +29,12 @@ export const HeroSection = () => {
               View Products
             </Link>
 
-            <button className="bg-creamy font-medium px-6 py-3 rounded-lg w-full sm:w-auto text-center">
+            <Link
+              to="/products"
+              className="bg-creamy font-medium px-6 py-3 rounded-lg w-full sm:w-auto text-center"
+            >
               🛒 Buy Now
-            </button>
+            </Link>
           </section>
         </div>
       </Container>
