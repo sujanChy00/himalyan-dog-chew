@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <div className="pr-10">
+    <div className="md:pr-10">
       <h2 className="text-2xl font-bold mb-4">What is Himalayan Cheese?</h2>
       <p className="text-gray-800 text-sm font-medium leading-relaxed">
         Himalayan Cheese is a traditional hard cheese made from yak and cow milk
