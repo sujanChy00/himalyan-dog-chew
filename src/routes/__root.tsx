@@ -73,7 +73,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-cream text-stone-900 antialiased overflow-x-hidden">
+      <body className="antialiased overflow-x-hidden">
         <LanguageProvider>
           <Header />
           {children}

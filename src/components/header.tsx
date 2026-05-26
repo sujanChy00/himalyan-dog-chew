@@ -1,85 +1,65 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { headerLinks } from "#/constants";
+import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Container } from "./container";
-import { ToggleLanguage } from "./toggle-language";
 
 export const Header = () => {
-  const location = useLocation();
+  const [hasBorder, setHasBorder] = useState(false);
 
-  const activeClassName = "text-white bg-ember";
-  const LinkClassName =
-    "px-3 py-1.5 rounded-full hover:text-white hover:bg-ember transition-all";
+  useEffect(() => {
+    const handleScroll = () => {
+      const canScrollEnough =
+        document.documentElement.scrollHeight > window.innerHeight + 500;
+
+      if (!canScrollEnough) {
+        setHasBorder(false);
+        return;
+      }
+
+      setHasBorder(window.scrollY > 500);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-lg bg-cream/85 border-b border-stone-200/70">
-      <Container className="py-3 flex items-center gap-4 justify-between">
-        <Link
-          to={"/"}
-          aria-label="Himalayan Dog Cheese home"
-          className="flex items-center gap-3 group"
-        >
-          <div className="rounded-full size-10 overflow-hidden flex items-center justify-center  text-lg shadow-md">
-            <img src="/favicon.ico" alt="logo" />
-          </div>
-          <div className="leading-tight">
-            <h3 className="font-display font-bold text-stone-900 text-sm">
-              Himalayan Dog Cheese
-            </h3>
-            <h6 className="text-stone-400 text-xs">ヒマラヤチーズ</h6>
-          </div>
+    <header
+      className={`fixed top-0 z-50 w-full bg-brand border-b-brand border-b transition-all duration-300 ${
+        hasBorder ? "border-b-creamy" : ""
+      }`}
+    >
+      <Container className="flex h-16 items-center justify-between">
+        <Link to="/">
+          <img src="/logo.webp" alt="logo" />
         </Link>
 
-        <nav
-          className="hidden md:flex items-center gap-1 text-sm font-body"
-          aria-label="Sections"
-        >
-          <a
-            href="#about"
-            className={`${LinkClassName} ${location.hash === "about" && activeClassName}`}
-          >
-            About
-          </a>
-          <a
-            href="#benefits"
-            className={`${LinkClassName} ${
-              location.hash === "benefits" && activeClassName
-            }`}
-          >
-            Benefits
-          </a>
-          <a
-            href="#products"
-            className={`${LinkClassName} ${
-              location.hash === "products" && activeClassName
-            }`}
-          >
-            Products
-          </a>
-          <a
-            href="#how-to"
-            className={`${LinkClassName} ${
-              location.hash === "how-to" && activeClassName
-            }`}
-          >
-            How to Use
-          </a>
-          <a
-            href="#faq"
-            className={`${LinkClassName} ${
-              location.hash === "faq" && activeClassName
-            }`}
-          >
-            FAQ
-          </a>
-          <a
-            href="#contact"
-            className={`${LinkClassName} ${
-              location.hash === "contact" && activeClassName
-            }`}
-          >
-            Contact
-          </a>
+        <nav className="flex items-center gap-4">
+          <ul className="flex gap-4">
+            {headerLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  activeProps={{
+                    className:
+                      "underline underline-offset-4 font-medium decoration-2",
+                  }}
+                  to={link.to}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <button className="rounded-lg bg-dark px-6 py-2 text-secondary">
+            🛒 Shop Now
+          </button>
         </nav>
-        <ToggleLanguage />
       </Container>
     </header>
   );
