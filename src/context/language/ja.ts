@@ -6,7 +6,8 @@ export const japanese_dictionary: Record<DictionaryKey, string> = {
   our_story_paragraph_2: "私たちは、愛犬の健康と幸せを第一に考え、品質にこだわり続けます。",
   our_story_learn_more: "私たちの想いを見る",
   hero_title_sub: "ヒマラヤ産 ヤクミルクチーズ",
-  hero_title: "Himalayan Cheese",
+   hero_title: `Himalayan 
+  Cheese`,
   hero_tagline: "自然素材で、愛犬に長く楽しめるご褒美を。",
   hero_description: "ヒマラヤの大自然で育ったヤクのミルクから作られたナチュラルハードチーズ。\n噛むことで歯の健康をサポートし、愛犬の毎日を豊かにします。",
   hero_view_products: "商品を見る",

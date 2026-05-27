@@ -12,7 +12,7 @@ export const HeroSection = () => {
           <p className="text-creamy-text text-sm sm:text-base md:text-xl font-bold tracking-widest uppercase mb-2 whitespace-pre-line">
             {t("hero_title_sub")}
           </p>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight md:leading-20 lg:leading-24 text-gray-900 mb-4 whitespace-pre-line">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight md:leading-20 lg:leading-24 text-gray-900 mb-4 sm:whitespace-pre-line">
             {t("hero_title")}
           </h1>
           <p className="text-creamy-text font-bold text-base sm:text-lg md:text-xl mb-4 whitespace-pre-line">

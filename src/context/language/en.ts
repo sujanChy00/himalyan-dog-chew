@@ -6,7 +6,8 @@ export const engish_dictionary: Record<DictionaryKey, string> = {
   our_story_paragraph_2: "We believe that your dog's health and happiness come first, and we are committed to delivering the best natural treats.",
   our_story_learn_more: "Learn Our Story",
   hero_title_sub: "Himalayan Yak Milk Cheese",
-  hero_title: "Himalayan Cheese",
+  hero_title: `Himalayan 
+  Cheese`,
   hero_tagline: "A natural, long-lasting treat your dog will love.",
   hero_description: "Made with yak and cow milk from the Himalayas, our natural hard cheese supports your dog's dental health and daily well-being.",
   hero_view_products: "View Products",
