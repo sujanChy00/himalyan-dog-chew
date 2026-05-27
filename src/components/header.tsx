@@ -1,13 +1,16 @@
+import { useLanguage } from "#/context/language";
 import { headerLinks } from "#/constants";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Container } from "./container";
 import { MenuIcon } from "./icons/menu";
 import { MobileMenu } from "./mobile-menu";
+import { ToggleLanguage } from "./toggle-language";
 
 export const Header = () => {
   const [hasBorder, setHasBorder] = useState(false);
   const [menuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,17 +58,17 @@ export const Header = () => {
                     }}
                     to={link.to}
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </Link>
                 </li>
               ))}
             </ul>
-
+            <ToggleLanguage />
             <Link
               to="/"
               className="rounded-lg bg-dark px-6 py-2 sm:block hidden text-secondary"
             >
-              🛒 Shop Now
+              {t("menu_shop_now")}
             </Link>
             <button
               onClick={() => {

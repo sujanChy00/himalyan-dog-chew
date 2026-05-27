@@ -1,7 +1,10 @@
+import { useLanguage } from "#/context/language";
 import { benefitsList } from "#/constants";
 import { Container } from "./container";
 
 export const Benefits = () => {
+  const { t } = useLanguage();
+
   return (
     <Container className="bg-brand rounded-2xl sm:rounded-3xl py-10 sm:py-12 px-4 sm:px-6 lg:px-8 shadow-lg">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
@@ -11,10 +14,12 @@ export const Benefits = () => {
               {b.icon}
             </div>
 
-            <h3 className="font-bold text-base sm:text-lg">{b.title}</h3>
+            <h3 className="font-bold text-base sm:text-lg whitespace-pre-line">
+              {t(b.titleKey)}
+            </h3>
 
-            <p className="text-gray-700 text-sm leading-relaxed max-w-xs">
-              {b.description}
+            <p className="text-gray-700 text-sm leading-relaxed max-w-xs whitespace-pre-line">
+              {t(b.descKey)}
             </p>
           </section>
         ))}

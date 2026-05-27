@@ -3,14 +3,11 @@ import { useLanguage } from "#/context/language";
 export const ToggleLanguage = () => {
   const { setLanguage, language } = useLanguage();
   return (
-    <div
-      className="flex items-center gap-2 border border-stone-200 rounded-full overflow-hidden bg-white shadow-sm text-sm font-body"
-      aria-label="Language switch"
-    >
+    <div className="flex items-center gap-1" aria-label="Language switch">
       <button
         onClick={() => setLanguage("en")}
         id="btn-en"
-        className={`${language === "en" ? "bg-peak-500 text-white" : "text-stone-500"} px-4 py-1.5  transition-all ease-in-out`}
+        className={`rounded-full size-8 text-xs transition-all hover:bg-creamy hover:text-dark duration-300 ${language === "en" ? "bg-creamy text-dark" : ""}`}
         type="button"
       >
         EN
@@ -18,7 +15,7 @@ export const ToggleLanguage = () => {
       <button
         id="btn-jp"
         onClick={() => setLanguage("ja")}
-        className={`${language === "ja" ? "bg-peak-500 text-white" : "text-stone-500"} px-4 py-1.5  transition-all ease-in-out`}
+        className={`rounded-full size-8 text-xs transition-all hover:bg-creamy hover:text-dark duration-300 ${language === "ja" ? "bg-creamy text-dark" : ""}`}
         type="button"
       >
         JP

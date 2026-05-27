@@ -1,6 +1,7 @@
 import { CAN_USE_LOCAL_STORAGE } from "#/utils";
 import { createContext, useContext, useEffect, useState } from "react";
-import type { LanguageContextType, LanguageKey } from "./types";
+import { dictionary } from "./dictionary";
+import type { DictionaryKey, LanguageContextType, LanguageKey } from "./types";
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
@@ -32,8 +33,14 @@ export const LanguageProvider = ({
     }
   }, []);
 
+  const getLanguageKey = (key: DictionaryKey) => {
+    return dictionary[language][key];
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage, t: getLanguageKey }}
+    >
       {children}
     </LanguageContext.Provider>
   );

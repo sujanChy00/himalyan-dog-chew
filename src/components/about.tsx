@@ -1,14 +1,18 @@
+import { useLanguage } from "#/context/language";
+
 export const About = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="md:pr-10">
-      <h2 className="text-2xl font-bold mb-4">What is Himalayan Cheese?</h2>
-      <p className="text-gray-800 text-sm font-medium leading-relaxed">
-        Himalayan Cheese is a traditional hard cheese made from yak and cow milk
-        using time-honored methods.
+      <h2 className="text-2xl font-bold mb-4 whitespace-pre-line">
+        {t("about_title")}
+      </h2>
+      <p className="text-gray-800 text-sm font-medium leading-relaxed mb-4 whitespace-pre-line">
+        {t("about_paragraph_1")}
       </p>
-      <p className="text-gray-800 text-sm font-medium leading-relaxed mb-6">
-        It is a natural treat that supports your dog's dental health and overall
-        wellness.
+      <p className="text-gray-800 text-sm font-medium leading-relaxed mb-6 whitespace-pre-line">
+        {t("about_paragraph_2")}
       </p>
       <img
         src="/himalyan_yak.webp"

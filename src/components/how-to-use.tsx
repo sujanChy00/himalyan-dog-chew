@@ -12,7 +12,8 @@ export const HowToUse = () => {
           <p className="text-stone-500 text-lg max-w-2xl">
             <span>
               A little care goes a long way. Follow these steps to make every
-              chew session safe, enjoyable, and stress-free for you and your dog.
+              chew session safe, enjoyable, and stress-free for you and your
+              dog.
             </span>
           </p>
         </div>

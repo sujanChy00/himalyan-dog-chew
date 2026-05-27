@@ -1,3 +1,4 @@
+import { useLanguage } from "#/context/language";
 import { headerLinks } from "#/constants";
 import { Link } from "@tanstack/react-router";
 import { CloseIcon } from "./icons/close";
@@ -8,6 +9,8 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  const { t } = useLanguage();
+
   return (
     <>
       <div
@@ -39,14 +42,14 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   to={link.to}
                   className="block py-2 text-gray-600"
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               </li>
             ))}
           </ul>
         </section>
         <button className="rounded-lg bg-dark px-6 py-2 w-full text-secondary">
-          🛒 Shop Now
+          {t("menu_shop_now")}
         </button>
       </div>
       <div
