@@ -1,9 +1,14 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { FAQ } from "#/components/faq";
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/faq')({
+export const Route = createFileRoute("/faq")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
-  return <div>Hello "/faq"!</div>
+  return (
+    <div className="pt-20">
+      <FAQ />
+    </div>
+  );
 }

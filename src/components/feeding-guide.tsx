@@ -71,9 +71,9 @@ export const FeedingGuide = () => {
           </tbody>
         </table>
       </section>
-      <p className="text-sm font-medium text-gray-800 mt-2 whitespace-pre-line">
+      <div className="bg-amber-50/60 border border-amber-200 text-amber-950 text-xs p-3.5 rounded-lg mt-3 whitespace-pre-line leading-relaxed font-medium">
         {t("feeding_disclaimer")}
-      </p>
+      </div>
     </div>
   );
 };

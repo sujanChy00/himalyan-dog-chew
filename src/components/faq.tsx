@@ -1,90 +1,76 @@
-import { SectionLabel } from "./section-label";
+import { useLanguage } from "#/context/language";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { Container } from "./container";
 
-export const Faq = () => {
+export const FAQ = () => {
+  const { t } = useLanguage();
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    { q: t("faq_q1"), a: t("faq_a1") },
+    { q: t("faq_q2"), a: t("faq_a2") },
+    { q: t("faq_q3"), a: t("faq_a3") },
+    { q: t("faq_q4"), a: t("faq_a4") },
+    { q: t("faq_q5"), a: t("faq_a5") },
+  ];
+
+  const toggleOpen = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <section id="faq" className="py-16 sm:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="reveal mb-12">
-          <SectionLabel>FAQ</SectionLabel>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-stone-900 mb-3">
-            <span>Frequently asked questions</span>
+    <section id="faq" className="py-16 sm:py-24 bg-brand/5">
+      <Container className="max-w-4xl">
+        <div className="text-center mb-12">
+          <span className="text-sm font-bold tracking-widest text-creamy-text uppercase bg-creamy/30 px-3 py-1 rounded-full">
+            {t("menu_faq")}
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">
+            {t("faq_title")}
           </h2>
-          <p className="text-stone-500 text-lg max-w-2xl">
-            <span>
-              Everything you need to know before your dog takes their first
-              chew.
-            </span>
-          </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-5">
-          <article className="reveal lift bg-white rounded-3xl border border-stone-100 p-7 shadow-sm">
-            <div className="text-2xl mb-3">🐕</div>
-            <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>Is it suitable for all dogs?</span>
-            </h3>
-            <p className="text-stone-500 text-sm leading-relaxed">
-              <span>
-                Yes — we offer multiple sizes to suit small, medium, and large
-                breeds. We recommend choosing a size larger than you think you
-                need, especially for aggressive chewers. Not recommended for
-                puppies under 6 months or dogs with dental sensitivities.
-              </span>
-            </p>
-          </article>
-          <article
-            className="reveal lift bg-white rounded-3xl border border-stone-100 p-7 shadow-sm"
-            style={{ transitionDelay: ".08s" }}
-          >
-            <div className="text-2xl mb-3">⏱️</div>
-            <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>How long does one chew last?</span>
-            </h3>
-            <p className="text-stone-500 text-sm leading-relaxed">
-              <span>
-                Our chews are designed to last significantly longer than soft
-                treats — typically hours to days depending on your dog's size
-                and chewing intensity. The harder the chewer, the more
-                satisfying and extended the session.
-              </span>
-            </p>
-          </article>
-          <article
-            className="reveal lift bg-white rounded-3xl border border-stone-100 p-7 shadow-sm"
-            style={{ transitionDelay: ".16s" }}
-          >
-            <div className="text-2xl mb-3">🛒</div>
-            <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>Where can I buy it?</span>
-            </h3>
-            <p className="text-stone-500 text-sm leading-relaxed">
-              <span>
-                Our chews are available through select retailers in Japan and
-                via international wholesale and distribution partners worldwide.
-                Get in touch through our contact form for purchasing options
-                near you.
-              </span>
-            </p>
-          </article>
-          <article
-            className="reveal lift bg-white rounded-3xl border border-stone-100 p-7 shadow-sm"
-            style={{ transitionDelay: ".24s" }}
-          >
-            <div className="text-2xl mb-3">🛡️</div>
-            <h3 className="font-display font-bold text-lg text-stone-900 mb-2">
-              <span>Are they safe?</span>
-            </h3>
-            <p className="text-stone-500 text-sm leading-relaxed">
-              <span>
-                Himalayan cheese chews are naturally hard and low-risk when used
-                correctly. Always supervise your dog, remove the chew when it
-                becomes small enough to swallow whole, and consult your vet if
-                your dog has any dietary concerns. Made with no artificial
-                additives — just natural ingredients.
-              </span>
-            </p>
-          </article>
+
+        <div className="space-y-4">
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300"
+              >
+                <button
+                  onClick={() => toggleOpen(i)}
+                  className="w-full flex justify-between items-center p-6 text-left focus:outline-hidden group"
+                >
+                  <span className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-amber-800 transition-colors">
+                    {faq.q}
+                  </span>
+                  <ChevronDown
+                    className={twMerge(
+                      "size-5 text-gray-500 shrink-0 transition-transform duration-300",
+                      isOpen ? "rotate-180 text-amber-700" : "",
+                    )}
+                  />
+                </button>
+                <div
+                  className={twMerge(
+                    "transition-all duration-300 ease-in-out",
+                    isOpen
+                      ? "max-h-[300px] border-t border-gray-150"
+                      : "max-h-0",
+                  )}
+                >
+                  <p className="p-6 text-sm sm:text-base text-gray-700 leading-relaxed font-medium bg-gray-50/50">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

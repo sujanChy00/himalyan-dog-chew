@@ -1,5 +1,5 @@
-import { useLanguage } from "#/context/language";
 import { headerLinks } from "#/constants";
+import { useLanguage } from "#/context/language";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Container } from "./container";
@@ -65,7 +65,7 @@ export const Header = () => {
             </ul>
             <ToggleLanguage />
             <Link
-              to="/"
+              to="/products"
               className="rounded-lg bg-dark px-6 py-2 sm:block hidden text-secondary"
             >
               {t("menu_shop_now")}

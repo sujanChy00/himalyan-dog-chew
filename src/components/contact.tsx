@@ -1,67 +1,68 @@
+import { useLanguage } from "#/context/language";
 import { SectionLabel } from "./section-label";
 
 export const Contact = () => {
+  const { t, language } = useLanguage();
+
   return (
-    <section id="contact" className="py-16 sm:py-20">
+    <section id="contact" className="py-16 sm:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="reveal bg-linear-to-br from-stone-900 to-stone-800 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="reveal bg-linear-to-br from-stone-900 to-stone-700 rounded-3xl overflow-hidden shadow-2xl">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-10 sm:p-14">
-              <SectionLabel className=" text-peak-300 mb-3">
-                Get in touch
+              <SectionLabel className="text-creamy mb-3">
+                {t("contact_get_in_touch")}
               </SectionLabel>
-              <h2 className="font-display text-4xl font-bold text-white mb-4">
-                <span>Ready to partner with us?</span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                <span>{t("contact_ready_partner")}</span>
               </h2>
               <p className="text-stone-400 mb-8 leading-relaxed text-sm sm:text-base">
-                <span>
-                  Sierra Japan Enterprises LLC is the official importer of
-                  Himalayan Dog Cheese in Japan. We welcome inquiries from pet
-                  shops, retailers, and wholesale distributors.
-                </span>
+                <span>{t("contact_desc")}</span>
               </p>
-              <ul className="space-y-4 text-stone-300 text-sm">
+              <ul className="space-y-6 text-stone-300 text-sm">
                 <li className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-base">
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-base shrink-0">
                     📞
                   </span>
                   <div>
                     <div className="text-xs text-stone-500 font-semibold uppercase tracking-wider">
-                      <span>Phone</span>
+                      <span>{t("address_phone_label")}</span>
                     </div>
                     <a
                       href="tel:048-865-3396"
-                      className="hover:text-peak-300 transition-colors font-medium"
+                      className="hover:text-creamy transition-colors font-semibold"
                     >
-                      <span>048 865 3396</span>
+                      <span>048-865-3396</span>
                     </a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-base">
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-base shrink-0">
                     ✉️
                   </span>
                   <div>
                     <div className="text-xs text-stone-500 font-semibold uppercase tracking-wider">
-                      <span>Email</span>
+                      <span>{t("address_email_label")}</span>
                     </div>
                     <a
                       href="mailto:info@sierrajapan.com"
-                      className="hover:text-peak-300 transition-colors font-medium"
+                      className="hover:text-creamy transition-colors font-semibold"
                     >
                       <span>info@sierrajapan.com</span>
                     </a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-base">
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-base shrink-0">
                     ⏰
                   </span>
                   <div>
                     <div className="text-xs text-stone-500 font-semibold uppercase tracking-wider">
                       <span>Business Hours</span>
                     </div>
-                    <span>Mon - Fri, 9:00 AM - 6:00 PM</span>
+                    <span className="font-medium whitespace-pre-line">
+                      {t("contact_hours_val")}
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -69,7 +70,7 @@ export const Contact = () => {
             <div className="p-10 sm:p-14 bg-white/5 border-l border-white/10 flex flex-col justify-between">
               <div>
                 <h3 className="font-display font-bold text-white text-xl mb-6">
-                  <span>Company Profile</span>
+                  <span>{t("contact_company_profile")}</span>
                 </h3>
                 <div className="space-y-5 text-stone-300 text-sm">
                   <div>
@@ -77,7 +78,7 @@ export const Contact = () => {
                       <span>Company Name</span>
                     </div>
                     <div className="font-semibold text-white">
-                      <span>Sierra Japan Enterprises LLC</span>
+                      <span>{t("address_company")}</span>
                     </div>
                   </div>
                   <div>
@@ -86,26 +87,27 @@ export const Contact = () => {
                     </div>
                     <div>
                       <a
-                        href="https://maps.google.com/?q=埼玉県さいたま市桜区西堀2-4-2"
+                        href={`https://maps.google.com/?q=${encodeURIComponent(
+                          language === "ja"
+                            ? "埼玉県さいたま市中央区大戸1-34-10"
+                            : "1-34-10 Oto, Chuo-ku, Saitama-shi, Saitama 338-0012, Japan",
+                        )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-peak-300 transition-colors inline-flex items-center gap-1 font-medium"
+                        className="hover:text-creamy transition-colors inline-flex items-center gap-1 font-medium leading-relaxed"
                       >
-                        <span>
-                          Saitama Shi, Sakura Ku, Nishibori 2-4-2, Saitama,
-                          Japan ↗
-                        </span>
+                        <span>{t("contact_address_val")} ↗</span>
                       </a>
                     </div>
                   </div>
                   <div>
                     <div className="text-xs text-stone-500 font-semibold uppercase tracking-wider mb-1">
-                      <span>Phone</span>
+                      <span>{t("address_phone_label")}</span>
                     </div>
                     <div>
                       <a
                         href="tel:048-865-3396"
-                        className="hover:text-peak-300 transition-colors font-semibold"
+                        className="hover:text-creamy transition-colors font-semibold"
                       >
                         <span>048-865-3396</span>
                       </a>
@@ -115,10 +117,10 @@ export const Contact = () => {
               </div>
               <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap gap-2">
                 <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-stone-300 border border-white/20">
-                  <span>Official Importer</span>
+                  <span>{t("contact_importer")}</span>
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-medium bg-peak-500/40 text-peak-200 border border-peak-500/30">
-                  <span>Wholesale Partnership</span>
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-creamy/40 text-creamy border border-creamy/30">
+                  <span>{t("contact_partnership")}</span>
                 </span>
               </div>
             </div>

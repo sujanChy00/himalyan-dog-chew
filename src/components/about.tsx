@@ -11,8 +11,11 @@ export const About = () => {
       <p className="text-gray-800 text-sm font-medium leading-relaxed mb-4 whitespace-pre-line">
         {t("about_paragraph_1")}
       </p>
-      <p className="text-gray-800 text-sm font-medium leading-relaxed mb-6 whitespace-pre-line">
+      <p className="text-gray-800 text-sm font-medium leading-relaxed mb-4 whitespace-pre-line">
         {t("about_paragraph_2")}
+      </p>
+      <p className="text-gray-800 text-sm font-medium leading-relaxed mb-6 whitespace-pre-line">
+        {t("about_paragraph_3")}
       </p>
       <img
         src="/himalyan_yak.webp"

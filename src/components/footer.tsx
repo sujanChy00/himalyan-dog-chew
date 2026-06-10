@@ -1,5 +1,5 @@
-import { useLanguage } from "#/context/language";
 import { footerLinks } from "#/constants";
+import { useLanguage } from "#/context/language";
 import { Link } from "@tanstack/react-router";
 import { Container } from "./container";
 import { InstagramIcon } from "./icons/instagram";
@@ -9,8 +9,8 @@ export const Footer = () => {
   const { t, language } = useLanguage();
 
   return (
-    <footer>
-      <Container className="grid grid-cols-1 md:grid-cols-4 gap-10 md:divide-x pb-6">
+    <footer className="border-t border-t-creamy-dark">
+      <Container className="grid grid-cols-1 md:grid-cols-4 gap-10 md:divide-x py-10">
         <section className="space-y-1">
           <Link to="/">
             <img src="/logo.webp" alt="" />
@@ -20,7 +20,8 @@ export const Footer = () => {
             <p>{t("address_company")}</p>
             <p className="whitespace-pre-line">{t("address_lines")}</p>
             <a href="tel:+81488653396">
-              {t("address_phone_label")}: {language === "ja" ? "048-865-3396" : "+81-48-865-3396"}
+              {t("address_phone_label")}:{" "}
+              {language === "ja" ? "048-865-3396" : "+81-48-865-3396"}
             </a>
             <br />
             <a href="mailto:info@sierrajapan.com">
