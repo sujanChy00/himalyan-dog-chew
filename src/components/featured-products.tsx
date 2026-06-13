@@ -1,5 +1,5 @@
 import { useLanguage } from "#/context/language";
-import { Box, Layers, Package, Sparkles } from "lucide-react";
+import { Package } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
 import { Container } from "./container";
@@ -9,32 +9,25 @@ export const FeaturedProducts = ({ className }: { className?: string }) => {
 
   const products = [
     {
-      title: t("product_1_title"),
-      desc: t("product_1_desc"),
-      size: "S",
-      badge: "S-Size",
-      icon: <Sparkles className="size-8 text-amber-600" />,
-    },
-    {
-      title: t("product_2_title"),
-      desc: t("product_2_desc"),
-      size: "M",
-      badge: "M-Size",
-      icon: <Box className="size-8 text-amber-600" />,
-    },
-    {
-      title: t("product_3_title"),
-      desc: t("product_3_desc"),
-      size: "L",
-      badge: "L-Size",
+      title: t("product_title"),
+      brandColor: "#FF9900",
+      badge: "Amazon",
       icon: <Package className="size-8 text-amber-600" />,
+      href: "https://amzn.asia/d/03JGcivk",
     },
     {
-      title: t("product_4_title"),
-      desc: t("product_4_desc"),
-      size: "Bundle",
-      badge: "Value Pack",
-      icon: <Layers className="size-8 text-amber-600" />,
+      title: t("product_title"),
+      brandColor: "#DA3E50",
+      badge: "Mercari",
+      icon: <Package className="size-8 text-amber-600" />,
+      href: "https://jp.mercari.com/shops/product/2JMRfcvBmPEJ3osb4VEc9w?utm_source=ios&source_location=share&utm_medium=share",
+    },
+    {
+      title: t("product_title"),
+      brandColor: "#323091",
+      badge: "Tetoteto",
+      icon: <Package className="size-8 text-amber-600" />,
+      href: "https://tetoteto.co.jp/item/dog-chew-chhurpi-a2877725ufd",
     },
   ];
 
@@ -50,9 +43,12 @@ export const FeaturedProducts = ({ className }: { className?: string }) => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-8">
           {products.map((p, i) => (
-            <div
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
               key={i}
               data-card="product"
               className="bg-brand/10 border border-brand/20 hover:border-creamy-text/50 hover:bg-brand/20 transition-all duration-300 rounded-3xl p-6 flex flex-col justify-between shadow-xs hover:shadow-lg hover:-translate-y-1"
@@ -62,19 +58,19 @@ export const FeaturedProducts = ({ className }: { className?: string }) => {
                   <div className="p-3 bg-white rounded-2xl shadow-xs">
                     {p.icon}
                   </div>
-                  <span className="bg-dark text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span
+                    style={{ backgroundColor: p.brandColor }}
+                    className={`text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide`}
+                  >
                     {p.badge}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="sm:text-4xl text-2xl leading-relaxed font-display font-bold text-gray-900 mb-2">
                   {p.title}
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed font-medium mb-6">
-                  {p.desc}
-                </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </Container>

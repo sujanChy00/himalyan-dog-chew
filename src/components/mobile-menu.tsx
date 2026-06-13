@@ -1,5 +1,5 @@
-import { useLanguage } from "#/context/language";
 import { headerLinks } from "#/constants";
+import { useLanguage } from "#/context/language";
 import { Link } from "@tanstack/react-router";
 import { CloseIcon } from "./icons/close";
 
@@ -48,9 +48,12 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             ))}
           </ul>
         </section>
-        <button className="rounded-lg bg-dark px-6 py-2 w-full text-secondary">
+        <Link
+          to="/products"
+          className="rounded-lg bg-dark px-6 py-2 w-full text-secondary"
+        >
           {t("menu_shop_now")}
-        </button>
+        </Link>
       </div>
       <div
         className={`fixed inset-0 z-40 bg-white/5 backdrop-blur-2xl transition-opacity duration-300 ${

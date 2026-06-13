@@ -117,11 +117,9 @@ const dictionary_keys = [
   "address_phone_label",
   "address_email_label",
   "products_title",
-  "product_1_title",
+  "product_title",
   "product_1_desc",
-  "product_2_title",
   "product_2_desc",
-  "product_3_title",
   "product_3_desc",
   "product_4_title",
   "product_4_desc",
@@ -165,4 +163,3 @@ const dictionary_keys = [
 ] as const;
 
 export type DictionaryKey = (typeof dictionary_keys)[number];
-
