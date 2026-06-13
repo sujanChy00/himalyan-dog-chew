@@ -97,7 +97,6 @@ export const japanese_dictionary: Record<DictionaryKey, string> = {
   product_2_desc: "中型犬に理想的なサイズ。",
   product_title: "ヒマラヤヤクチーズ Lサイズ",
   product_3_desc: "大型犬や噛む力が強いワンちゃん向けのデザイン。",
-  product_4_title: "お得なバリューパック",
   product_4_desc:
     "多頭飼いのご家庭向けに、複数のサイズと数量をセットにしました。",
 

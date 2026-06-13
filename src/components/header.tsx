@@ -44,7 +44,7 @@ export const Header = () => {
       >
         <Container className="flex h-16 items-center justify-between">
           <Link to="/">
-            <img src="/logo.webp" alt="logo" />
+            <img src="/logo.webp" className="h-12 object-contain" alt="logo" />
           </Link>
 
           <nav className="flex items-center gap-4">

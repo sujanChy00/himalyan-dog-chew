@@ -121,7 +121,6 @@ const dictionary_keys = [
   "product_1_desc",
   "product_2_desc",
   "product_3_desc",
-  "product_4_title",
   "product_4_desc",
   "reviews_title",
   "review_1_text",

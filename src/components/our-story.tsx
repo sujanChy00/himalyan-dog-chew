@@ -1,10 +1,12 @@
 import { useLanguage } from "#/context/language";
-import { useState } from "react";
+import { Activity, useState } from "react";
 import { Container } from "./container";
 
 export const OurStory = () => {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<"nepal" | "learning" | "japan" | "bridge" | "commitment">("nepal");
+  const [activeTab, setActiveTab] = useState<
+    "nepal" | "learning" | "japan" | "bridge" | "commitment"
+  >("nepal");
 
   const tabs = [
     { id: "nepal" as const, label: t("our_story_nepal_title") },
@@ -148,19 +150,21 @@ export const OurStory = () => {
           </div>
 
           {/* Signature Block */}
-          <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className="flex items-center gap-3">
-              <div className="bg-dark text-secondary font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center">
-                JB
+          <Activity mode={activeTab === "nepal" ? "visible" : "hidden"}>
+            <section className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <div className="flex items-center gap-3">
+                <div className="bg-dark text-secondary font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center">
+                  JB
+                </div>
+                <div className="text-xs sm:text-sm whitespace-pre-line text-gray-800 leading-tight font-bold">
+                  {t("our_story_founder")}
+                </div>
               </div>
-              <div className="text-xs sm:text-sm whitespace-pre-line text-gray-800 leading-tight font-bold">
-                {t("our_story_founder")}
+              <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">
+                Sierra Japan Enterprises LLC
               </div>
-            </div>
-            <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">
-              Sierra Japan Enterprises LLC
-            </div>
-          </div>
+            </section>
+          </Activity>
         </div>
       </Container>
     </section>
