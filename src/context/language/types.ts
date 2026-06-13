@@ -160,6 +160,7 @@ const dictionary_keys = [
   "contact_email",
   "contact_message",
   "contact_submit",
+  "view",
 ] as const;
 
 export type DictionaryKey = (typeof dictionary_keys)[number];

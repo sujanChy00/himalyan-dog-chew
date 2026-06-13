@@ -224,4 +224,6 @@ export const engish_dictionary: Record<DictionaryKey, string> = {
   contact_email: "Email",
   contact_message: "Message",
   contact_submit: "Send Message",
+
+  view: "View",
 };

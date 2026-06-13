@@ -69,6 +69,8 @@ export const FeaturedProducts = ({ className }: { className?: string }) => {
                 <h3 className="sm:text-4xl text-2xl leading-relaxed font-display font-bold text-gray-900 mb-2">
                   {p.title}
                 </h3>
+
+                <p className="underline text-right pt-3">{t("view")} ↗</p>
               </div>
             </a>
           ))}
