@@ -222,5 +222,5 @@ export const japanese_dictionary: Record<DictionaryKey, string> = {
   contact_message: "メッセージ",
   contact_submit: "送信する",
 
-  view: "ビュー",
+  view: "もっと見る",
 };
