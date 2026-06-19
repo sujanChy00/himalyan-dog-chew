@@ -159,6 +159,8 @@ const dictionary_keys = [
   "contact_email",
   "contact_message",
   "contact_submit",
+  "contact_subject",
+  "email_sent_successfully",
   "view",
 ] as const;
 

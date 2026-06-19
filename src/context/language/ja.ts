@@ -200,6 +200,7 @@ export const japanese_dictionary: Record<DictionaryKey, string> = {
   contact_address_val: "〒338-0012 埼玉県さいたま市中央区大戸1-34-10",
   contact_importer: "正規輸入総代理店",
   contact_partnership: "卸売パートナーシップ",
+  contact_subject: "件名",
 
   // Footer & Miscellaneous
   footer_menu_title: "クイックリンク",
@@ -222,5 +223,6 @@ export const japanese_dictionary: Record<DictionaryKey, string> = {
   contact_message: "メッセージ",
   contact_submit: "送信する",
 
+  email_sent_successfully: "メールが正常に送信されました！",
   view: "もっと見る",
 };
