@@ -14,7 +14,7 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
-  visitedAt DateTime @default(now())
+  visitedAt DateTime @default(now()) @db.Date
   userAgent String?
 
   @@map("users")

@@ -13,7 +13,7 @@ export const Route = createFileRoute("/trackingdata")({
           });
         }
         const data = await prisma.user.groupBy({
-          by: ["userAgent"],
+          by: ["userAgent", "visitedAt"],
           _count: {
             userAgent: true,
           },
