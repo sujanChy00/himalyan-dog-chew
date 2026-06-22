@@ -13,3 +13,5 @@ __unconfig*
 todos.json
 *.docx
 /src/generated/prisma
+.vercel
+.env*
